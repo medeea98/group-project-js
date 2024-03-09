@@ -1,6 +1,2 @@
-:root {
-    --roboto-regular: 'Roboto', sans-serif, font-weight: 400;
-    --roboto-large: 'Roboto Medium', sans-serif, font-weight: 500;
-    
-  }
+@use 'variables';
 @import './header.scss';

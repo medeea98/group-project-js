@@ -1,5 +1,19 @@
-
-<div class="search-container">
-    <input type="text" placeholder="Search a movie of your interest" class="search-input">
-    <button type="submit" class="search-button">Search</button>
+<div class="container-header">
+    <svg class="icon icon-film-1" width="24" height="24"><use xlink:href="/src/images/icon.svg#icon-film-1"></use></svg>
+    <nav>
+        <ul class="site-nav__list">
+            <li class="site-nav__item">
+                <button class="home-btn is-active js-home" data-request="home" aria-label="home">HOME</button>
+            </li>
+            <li class="site-nav__item">
+                <button class="library-btn js-library" data-request="library" aria-label="my library">MY LIBRARY</button>
+            </li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search a movie" class="search-input">
+        <button type="submit" class="search-button"><svg class="icon-search-2" width="12" height="12"><use xlink:href="/src/images/icon.svg#icon-search-2"></use></svg></button>
+    </div>
 </div>
+
+
