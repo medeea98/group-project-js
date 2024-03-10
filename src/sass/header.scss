@@ -71,7 +71,7 @@
   }
   .search-bar {
     width: 336px;
-   
+    left: 220px;
    
   }
   .search-bar input[type="text"] {
@@ -79,8 +79,7 @@
     
   }
   .icon-film-1 { 
-    
-    top: 46px;
+    top: 56px;
     left: 71px;
   }
   .filmoteka {
@@ -91,12 +90,44 @@
     top: 25px;
     font-family: "Roboto";
     font-weight: 500;
-    
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: center;   
  }
  .site-nav__list {
-  
+    margin-top: 0px;
  }
+}
 
 @media screen and (min-width: 1158px) {
+  .container-header {
+    background-image: url(/src/images/desktop/header.jpg);
+}
+.filmoteka {
+  display: flex;
+  position: relative;
+  color: white;
+  margin-left: 100px;
+  top: 25px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: center;   
+}
+.icon-film-1 { 
+  top: 56px;
+  left: 71px;
+}
+.search-bar {
+  left: 444px;
+  width: 336px;
+}
+.search-bar input[type="text"] {
+  width: 336px;
 }
 }
