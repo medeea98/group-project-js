@@ -1,1 +1,5 @@
+
 @import './my-library.scss';
+
+@use 'variables';
+@import './header.scss';
