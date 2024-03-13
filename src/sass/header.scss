@@ -1,74 +1,112 @@
 @use 'variables';
 @import '~node_modules/modern-normalize/modern-normalize.css';
-  .container-header {
-    background-image: url(/src/images/mobile/header.jpg);
-    background-size: contain;
-    background-position: center;
-    height: 230px;
-  }
-  .filmoteka {
-    display: none; 
-  }
-  .search-bar {
-    position: relative;
-    top: 40px; 
-    left: 30px;
-    width: 280px;
-    align-content: center;
-  }
-  .search-bar input[type="text"] {
-    color: white;
-    width: 280px;
-    height: 20px;
-    border: none;
-    border-bottom: 1px solid white; 
-    background-color: transparent; 
-    outline: none; 
-  }
-  .search-bar input[type="text"]::placeholder {
-    color: white;
-    font-family: "Roboto";
-    font-weight: 400;
-  }
-  .search-button {
-    background-color: transparent; 
-    outline: none; 
-    border: none;
-    position: absolute;
-    right: 2px;
-  }
-  .site-nav__list {
-    display: flex;
-    justify-content:flex-end;
-    gap: 30px;
-    margin-top: 14px;
-    list-style: none;
-   
-  }
-  .site-nav__item button{
-    background-color: transparent; 
-    outline: none; 
-    border-bottom: 2px solid transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-family: "Roboto";
-    color: white;
-    font-weight: 500;
-  }
-  .site-nav__item button:hover {
-    border-bottom: solid #FF6B08;
-    cursor: pointer;
-  }
-  .library-btn {
-    margin-right: 30px;
-  }
- .icon-film-1 {
-    position: relative;
-    top: 36px;
-    left: 21px;
+.container-header {
+  background-image: url(/src/images/mobile/header.jpg);
+  background-size: contain;
+  background-position: center;
+  height: 230px;
 }
-@media screen and (min-width: 768px) and (max-width:1158px) {
+
+.library-header {
+  background-image: url(/src/images/mobile/headerLib.jpg);
+  background-size: contain;
+  background-position: center;
+  height: 230px;
+}
+
+.list-button {
+  display: flex;
+  margin-top: 36px;
+  justify-content: center;
+}
+
+.button-library {
+  width: 130px;
+  height: 44px;
+  color: #ffffff;
+  background-color: Transparent;
+  border-color: #ffffff;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: #ff6b01;
+    border: none;
+  }
+}
+
+.button-library:not(:first-child) {
+  margin-left: 15px;
+}
+
+.filmoteka {
+  display: none;
+}
+.search-bar {
+  position: relative;
+  top: 40px;
+  left: 30px;
+  width: 280px;
+  align-content: center;
+}
+.search-bar input[type='text'] {
+  color: white;
+  width: 280px;
+  height: 20px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  outline: none;
+}
+.search-bar input[type='text']::placeholder {
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+.search-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  position: absolute;
+  right: 2px;
+}
+.site-nav__list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-top: 14px;
+  list-style: none;
+}
+.site-nav__item button {
+  background-color: transparent;
+  outline: none;
+  border-bottom: 2px solid transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: 'Roboto';
+  color: white;
+  font-weight: 500;
+}
+.site-nav__item button:hover {
+  border-bottom: solid #ff6b08;
+  cursor: pointer;
+}
+.library-btn {
+  margin-right: 30px;
+}
+.icon-film-1 {
+  position: relative;
+  top: 36px;
+  left: 21px;
+}
+@media screen and (min-width: 768px) and (max-width: 1158px) {
   .container-header {
     background-image: url(/src/images/tablet/header@2x.jpg);
     background-size: contain;
@@ -78,13 +116,11 @@
   .search-bar {
     width: 336px;
     left: 220px;
-   
   }
-  .search-bar input[type="text"] {
+  .search-bar input[type='text'] {
     width: 336px;
-    
   }
-  .icon-film-1 { 
+  .icon-film-1 {
     top: 56px;
     left: 71px;
   }
@@ -94,46 +130,50 @@
     color: white;
     margin-left: 100px;
     top: 25px;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 500;
     font-size: 30px;
     font-weight: 500;
     line-height: 35px;
     letter-spacing: 0em;
-    text-align: center;   
- }
- .site-nav__list {
+    text-align: center;
+  }
+  .site-nav__list {
     margin-top: 0px;
- }
+  }
 }
 
 @media screen and (min-width: 1158px) {
   .container-header {
     background-image: url(/src/images/desktop/header.jpg);
-}
-.filmoteka {
-  display: flex;
-  position: relative;
-  color: white;
-  margin-left: 100px;
-  top: 25px;
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 35px;
-  letter-spacing: 0em;
-  text-align: center;   
-}
-.icon-film-1 { 
-  top: 56px;
-  left: 71px;
-}
-.search-bar {
-  left: 444px;
-  width: 336px;
-}
-.search-bar input[type="text"] {
-  width: 336px;
-}
+  }
+  .library-header {
+    background-image: url(/src/images/desktop/headerLib.jpg);
+  }
+
+  .filmoteka {
+    display: flex;
+    position: relative;
+    color: white;
+    margin-left: 100px;
+    top: 25px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  .icon-film-1 {
+    top: 56px;
+    left: 71px;
+  }
+  .search-bar {
+    left: 444px;
+    width: 336px;
+  }
+  .search-bar input[type='text'] {
+    width: 336px;
+  }
 }
