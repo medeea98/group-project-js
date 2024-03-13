@@ -1,20 +1,43 @@
 <header class="container-header">
-    <svg class="icon icon-film-1" width="24" height="24"><use xlink:href="/src/images/icon.svg#icon-film-1"></use></svg>
-    <span class="filmoteka">FILMOTEKA</span>
-    <nav>
-        <ul class="site-nav__list">
-            <li class="site-nav__item">
-                <button class="home-btn is-active js-home" data-request="home" aria-label="home">HOME</button>
-            </li>
-            <li class="site-nav__item">
-                 <button class="library-btn js-library" data-request="library" aria-label="my library">MY LIBRARY</button> 
-            </li>
-        </ul>
-    </nav>
-    <form class="search-bar">
-        <input type="text" placeholder="Search a movie" class="search-input">
-        <button type="submit" class="search-button"><svg class="icon-search-2" width="12" height="12"><use xlink:href="/src/images/icon.svg#icon-search-2"></use></svg></button>
-    </form>
+  <svg class="icon icon-film-1" width="24" height="24">
+    <use xlink:href="/src/images/icon.svg#icon-film-1"></use>
+  </svg>
+  <span class="filmoteka">FILMOTEKA</span>
+  <nav>
+    <ul class="site-nav__list">
+      <li class="site-nav__item">
+        <button
+          class="home-btn is-active js-home"
+          data-request="home"
+          aria-label="home"
+        >
+          HOME
+        </button>
+      </li>
+      <li class="site-nav__item">
+        <button
+          class="library-btn js-library"
+          data-request="library"
+          aria-label="my library"
+        >
+          MY LIBRARY
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <form class="search-bar">
+    <input type="text" placeholder="Search a movie" class="search-input" />
+    <button type="submit" class="search-button">
+      <svg class="icon-search-2" width="12" height="12">
+        <use xlink:href="/src/images/icon.svg#icon-search-2"></use>
+      </svg>
+    </button>
+  </form>
+  <div class="list-button visually-hidden">
+    <button class="button-library js-button-library-watched focus">
+      Watched
+    </button>
+    <button class="button-library js-button-library-queue">Queue</button>
+    <button class="button-library js-button-library-clear">Clear</button>
+  </div>
 </header>
-
-
