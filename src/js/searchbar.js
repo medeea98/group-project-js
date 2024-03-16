@@ -34,7 +34,7 @@ async function getGenres() {
 async function getPopularMovies() {
   return getMovies('/trending/movie/week');
 }
-  
+
 async function searchMovies(title) {
   const apiUrl = `${apiUrlBase}/search/movie?api_key=${apiKey}&query=${title}&language=en-US&include_adult=false&page=1`;
 
@@ -42,7 +42,7 @@ async function searchMovies(title) {
     method: 'GET',
     headers: {
       accept: 'application/json',
-    }
+    },
   };
 
   return await fetchData(apiUrl, options);
@@ -55,7 +55,7 @@ function roundRating(rating) {
       : Math.floor(rating * 100) / 100;
   return roundedRating;
 }
-  
+
 async function searchAndDisplayMovies(title) {
   let movies;
   if (title) {
@@ -76,16 +76,16 @@ async function searchAndDisplayMovies(title) {
     document.querySelector('.movies').remove();
     const moviesContainer = document.createElement('div');
     moviesContainer.classList.add('movies');
-  
+
     const movieContainer = document.createElement('div');
     movieContainer.id = 'movie-container';
-  
+
     moviesContainer.appendChild(movieContainer);
-  
+
     document.body.appendChild(moviesContainer);
 
     const genres = await getGenres();
-    
+
     movies.results.forEach(movie => {
       createMovieCard(movie, genres, movieContainer);
     });
@@ -125,9 +125,7 @@ function createMovieCard(movie, genres, movieContainer) {
   ratingSpan.textContent = ` ${roundedRating}`;
 
   if (otherGenres.length > 0) {
-    movieGenreYearRating.innerHTML = `${displayedGenres.join(
-      ', '
-    )}, Other | ${
+    movieGenreYearRating.innerHTML = `${displayedGenres.join(', ')}, Other | ${
       movie.release_date ? movie.release_date.substring(0, 4) : 'N/A'
     } | `;
   } else {
@@ -168,4 +166,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchQuery = searchInput.value.trim();
     await searchAndDisplayMovies(searchQuery);
   });
-})
+});
