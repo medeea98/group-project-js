@@ -1,3 +1,9 @@
+import './js/api-key'
+import './js/films-section'
+import './js/footer'
+import './js/modal-footer'
+import './js/refs'
+import './js/searchbar'
 import './sass/index.scss';
 import './js/home';
 import './js/js-library';
