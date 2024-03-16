@@ -100,7 +100,7 @@ async function displayMovies() {
   });
 }
 
-function openMovieModal(
+export function openMovieModal(
   movieTitle,
   posterPath,
   rating,
