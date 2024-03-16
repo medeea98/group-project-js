@@ -1,6 +1,6 @@
 // searchbar.js
 import { apiKey, apiUrlBase } from './api-key.js';
-
+import {openMovieModal} from './films-section.js'
 async function fetchData(url, options) {
   try {
     const response = await fetch(url, options);
@@ -147,6 +147,16 @@ function createMovieCard(movie, genres, movieContainer) {
   movieCard.appendChild(movieDescription);
 
   movieContainer.appendChild(movieCard);
+  movieCard.addEventListener('click', () => {
+    openMovieModal(
+      movie.title,
+      movie.poster_path,
+      movie.vote_average,
+      movie.popularity,
+      displayedGenres,
+      movie.overview
+    );
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
