@@ -30,6 +30,8 @@ function roundRating(rating) {
 }
 
 async function displayMovies() {
+  const mainContent = document.getElementById('main-content');
+
   const moviesContainer = document.createElement('div');
   moviesContainer.classList.add('movies');
 
@@ -38,7 +40,7 @@ async function displayMovies() {
 
   moviesContainer.appendChild(movieContainer);
 
-  document.body.appendChild(moviesContainer);
+  mainContent.appendChild(moviesContainer);
 
   const movies = await getPopularMovies();
   const genres = await getGenres();
