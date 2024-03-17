@@ -15,7 +15,7 @@ function showSpinner() {
     fps: 20,
     zIndex: 2e9,
     className: 'spinner',
-    top: '50%', 
+    top: '51%', 
     left: '50%', 
     shadow: false,
     hwaccel: false,
