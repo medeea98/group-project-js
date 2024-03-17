@@ -1,0 +1,2 @@
+var modal=document.getElementById("myModal");function openModal(){modal.style.display="block",window.addEventListener("keydown",closeModalOnEscape),window.addEventListener("click",closeModalOnClickOutside)}function closeModal(){modal.style.display="none",window.removeEventListener("keydown",closeModalOnEscape),window.removeEventListener("click",closeModalOnClickOutside)}function closeModalOnEscape(e){"Escape"===e.key&&"block"===modal.style.display&&closeModal()}function closeModalOnClickOutside(e){e.target===modal&&closeModal()}
+//# sourceMappingURL=index.3855fd7b.js.map
