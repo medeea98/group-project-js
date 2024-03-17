@@ -6,3 +6,4 @@ import './js/searchbar'
 import './sass/index.scss';
 import './js/home';
 import './js/js-library';
+import './js/spinner';
