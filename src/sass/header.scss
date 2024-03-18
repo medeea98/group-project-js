@@ -6,7 +6,9 @@
   background-position: center;
   height: 230px;
 }
-
+a {
+  text-decoration: none;
+}
 .library-header {
   background-image: url(/src/images/mobile/headerLib.jpg);
   background-size: contain;
@@ -47,6 +49,7 @@
 
 .filmoteka {
   display: none;
+  text-decoration: none;
 }
 .search-bar {
   position: relative;
@@ -137,6 +140,7 @@
     line-height: 35px;
     letter-spacing: 0em;
     text-align: center;
+    text-decoration: none;
   }
   .site-nav__list {
     margin-top: 0px;
@@ -164,6 +168,7 @@
     line-height: 35px;
     letter-spacing: 0em;
     text-align: center;
+    text-decoration: none;
   }
   .icon-film-1 {
     top: 56px;
