@@ -1,6 +1,6 @@
 // searchbar.js
 import { apiKey, apiUrlBase } from './api-key.js';
-import {openMovieModal} from './films-section.js'
+import {openMovieModal} from './films-section.js';
 async function fetchData(url, options) {
   try {
     const response = await fetch(url, options);
