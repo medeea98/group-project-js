@@ -1,21 +1,25 @@
-document.addEventListener('click', function (event) {
-  const target = event.target;
-
-  if (
-    target.classList.contains('movie-watched-btn') ||
-    target.classList.contains('movie-queue-btn')
-  ) {
-    const movieCard = target.closest('.movie-card');
-    const movieTitle = movieCard.querySelector('.movie-title').textContent;
-
-    let movies = JSON.parse(localStorage.getItem('movies')) || [];
-
-    const movie = {
-      title: movieTitle,
-      watched: target.classList.contains('movie-watched-btn') ? true : false,
-    };
-
-    movies.push(movie);
-    localStorage.setItem('movies', JSON.stringify(movies));
-  }
+export let watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+export let queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+import {addToWatchedButton}  from './films-section.js'
+import {addToQueueButton} from './films-section'
+  addToWatchedButton.addEventListener('click', function() {
+      let movieId = this.dataset.movieId;
+      addToWatched(movieId);
+  });
+  addToQueueButton.addEventListener('click', function() {
+    let movieId = this.dataset.movieId;
+    addToQueue(movieId);
 });
+function addToWatched(movieId) {
+ let watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+ if (!watchedMovies.includes(movieId)) {
+  watchedMovies.push(movieId);
+  localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+}}
+
+function addToQueue(movieId) {
+  let queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+  if (!queueMovies.includes(movieId)) {
+    queueMovies.push(movieId);
+  localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+}}

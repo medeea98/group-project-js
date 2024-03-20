@@ -1,5 +1,10 @@
 export const apiKey = '004a3a7ad0ebfa9ee53f6d0ac407af43';
 export const apiUrlBase = 'https://api.themoviedb.org/3';
+export const addToWatchedButton = createButton(
+  'ADD TO WATCHED',
+  'movie-watched-btn'
+);
+export const addToQueueButton = createButton('ADD TO QUEUE', 'movie-queue-btn');
 
 async function fetchData(endpoint) {
   const apiUrl = `${apiUrlBase}/${endpoint}?api_key=${apiKey}`;
@@ -29,7 +34,7 @@ function roundRating(rating) {
   return roundedRating;
 }
 
-async function displayMovies() {
+export async function displayMovies() {
   const mainContent = document.getElementById('main-content');
 
   const moviesContainer = document.createElement('div');
