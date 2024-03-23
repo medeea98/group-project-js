@@ -167,6 +167,7 @@ export function createMovieCard(movie, genres, movieContainer) {
   movieContainer.appendChild(movieCard);
   movieCard.addEventListener('click', () => {
     openMovieModal(
+      movie.id,
       movie.title,
       movie.poster_path,
       movie.vote_average,
