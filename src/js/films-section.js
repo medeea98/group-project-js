@@ -92,6 +92,7 @@ export async function displayMovies() {
 
     movieCard.addEventListener('click', () =>
       openMovieModal(
+        movie.id,
         movie.title,
         movie.poster_path,
         roundRating(rating),
@@ -106,6 +107,7 @@ export async function displayMovies() {
 }
 
 export function openMovieModal(
+  movieId,
   movieTitle,
   posterPath,
   rating,
@@ -210,6 +212,14 @@ export function openMovieModal(
 
   modalBackdrop.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+
+  addToWatchedButton.addEventListener('click', () => {
+    addToWatched(movieId);
+  });
+  
+  addToQueueButton.addEventListener('click', () => {
+    addToQueue(movieId);
+  });
 }
 
 function closeModal(modalBackdrop) {
@@ -223,6 +233,22 @@ function createButton(text, className) {
   button.textContent = text;
   button.classList.add(className);
   return button;
+}
+
+function addToWatched(movieId) {
+  let watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+  if (!watchedMovies.includes(movieId)) {
+    watchedMovies.push(movieId);
+    localStorage.setItem('watchedMovies', JSON.stringify(watchedMovies));
+  }
+};
+
+function addToQueue(movieId) {
+  let queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+  if (!queueMovies.includes(movieId)) {
+    queueMovies.push(movieId);
+    localStorage.setItem('queueMovies', JSON.stringify(queueMovies));
+  }
 }
 
 window.onload = displayMovies;

@@ -27,7 +27,7 @@ async function getMovies(endpoint) {
   }
 }
 
-async function getGenres() {
+export async function getGenres() {
   return getMovies('/genre/movie/list');
 }
 
@@ -44,6 +44,19 @@ async function searchMovies(title) {
       accept: 'application/json',
     },
   };
+
+  return await fetchData(apiUrl, options);
+}
+
+export async function searchMovieById(id) {
+  const apiUrl = `${apiUrlBase}/movie/${id}?api_key=${apiKey}`;
+
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    }
+  }
 
   return await fetchData(apiUrl, options);
 }
@@ -85,14 +98,13 @@ async function searchAndDisplayMovies(title) {
     document.body.appendChild(moviesContainer);
 
     const genres = await getGenres();
-
     movies.results.forEach(movie => {
       createMovieCard(movie, genres, movieContainer);
     });
   }
 }
 
-function createMovieCard(movie, genres, movieContainer) {
+export function createMovieCard(movie, genres, movieContainer) {
   const movieCard = document.createElement('div');
   movieCard.classList.add('movie-card');
 
@@ -107,11 +119,19 @@ function createMovieCard(movie, genres, movieContainer) {
   const movieTitle = document.createElement('h2');
   movieTitle.textContent = movie.title;
   movieTitle.classList.add('movie-title');
+  let movieGenres;
 
-  const movieGenres = movie.genre_ids.map(genreId => {
-    const genre = genres.genres.find(g => g.id === genreId);
-    return genre ? genre.name : '';
-  });
+  if (movie.genre_ids) {
+    movieGenres = movie.genre_ids.map(genreId => {
+      console.log(movie);
+      const genre = genres.genres.find(g => g.id === genreId);
+      return genre ? genre.name : '';
+    });
+  } else {
+    movieGenres = movie.genres.map(genre => {
+      return genre.name;
+    });
+  }
 
   const displayedGenres = movieGenres.slice(0, 2);
   const otherGenres = movieGenres.slice(2);
